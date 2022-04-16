@@ -1,4 +1,3 @@
-
 //This code does NOT create any global variables.
 //Promises can be chained together, with the previous promise
 // passing its results to the next one in the chain.
@@ -17,7 +16,7 @@ fetch("houses.json")
         //then pass the argument "member" to another function to capture each house member in the array as a dd
         data.forEach((house) => {
             let objInfo = `<dt class="house">${house.name}</dt>`;
-            house.members.forEach((member) =>{
+            house.members.forEach((member) => {
                 objInfo += `<dd class="folks">${member}</dd>`;
             });
 
@@ -33,17 +32,16 @@ fetch("houses.json")
         container.innerHTML = html;
     })
     .catch((err) => console.log("There was an error:", err));
-    //this only runs if there is an error during the above process
+//this only runs if there is an error during the above process
 
-    /* part 2 of assignment */
+/* part 2 of assignment - make external json call for random dark color then
+set it as the background color for the page. Make text color white for the dark background */
 
-    fetch('https://x-colors.herokuapp.com/api/random/hue?type=dark')
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            mainBody = document.getElementById("mainbody");
-            mainBody.style.backgroundColor = data.hex;
-            mainBody.style.color = "white";
-            console.log(mainBody.style);
-        })
-        .catch((err) => console.log("There was an error:", err));
+fetch('https://x-colors.herokuapp.com/api/random/hue?type=dark')
+    .then((response) => response.json())
+    .then((data) => {
+        let mainBody = document.getElementById("mainbody");
+        mainBody.style.backgroundColor = data.hex;
+        mainBody.style.color = "white";
+    })
+    .catch((err) => console.log("There was an error:", err));
