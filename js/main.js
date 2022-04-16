@@ -34,3 +34,16 @@ fetch("houses.json")
     })
     .catch((err) => console.log("There was an error:", err));
     //this only runs if there is an error during the above process
+
+    /* part 2 of assignment */
+
+    fetch('https://x-colors.herokuapp.com/api/random/hue?type=dark')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            mainBody = document.getElementById("mainbody");
+            mainBody.style.backgroundColor = data.hex;
+            mainBody.style.color = "white";
+            console.log(mainBody.style);
+        })
+        .catch((err) => console.log("There was an error:", err));
