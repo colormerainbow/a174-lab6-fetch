@@ -37,6 +37,7 @@ fetch("houses.json")
 /* part 2 of assignment - make external json call for random dark color then
 set it as the background color for the page. Make text color white for the dark background */
 
+/*
 fetch('https://x-colors.herokuapp.com/api/random/hue?type=dark')
     .then((response) => response.json())
     .then((data) => {
@@ -45,3 +46,20 @@ fetch('https://x-colors.herokuapp.com/api/random/hue?type=dark')
         mainBody.style.color = "white";
     })
     .catch((err) => console.log("There was an error:", err));
+*/
+    //extra credit - convert the gathering of the code in a function call then create an async function that compiles the html string. then call the function
+async function getColors() {
+    let response = await fetch('https://x-colors.herokuapp.com/api/random/hue?type=light');
+    console.log('response is', response);
+    return response.json();
+}
+async function processColors() {
+    console.log('here');
+    let colors = await getColors();
+    console.log('colors', colors);
+    let mainBody = document.getElementById("mainbody");
+    mainBody.style.backgroundColor = colors.hex;
+    mainBody.style.color = "black";
+}
+
+processColors();
