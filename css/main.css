@@ -6,10 +6,12 @@ h3 {
     text-align: center;
 }
 .refresh a {
-    text-align: center;
     color: white;
     text-decoration: none;
     border: 2px solid black;
     background-color: black;
     padding: .5rem;
+}
+body {
+    padding: 2rem;
 }
