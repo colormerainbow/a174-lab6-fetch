@@ -9,13 +9,13 @@ fetch("houses.json")
     .then((response) => response.json())
     .then((data) => {
         //create a temp holder to append all the html generated inside the forEach iterators to build a description list.
-        let html = `<p class="list">Game of Thrones List</p><dl class="GoT-House-List">`;
+        let html = `<h2 class="list">Game of Thrones List</h2><dl class="GoT-House-List">`;
 
 
         //Pass the argument "house" to the arrow function to capture the house information as the dt
         //then pass the argument "member" to another function to capture each house member in the array as a dd
         data.forEach((house) => {
-            let objInfo = `<dt class="house">${house.name}</dt>`;
+            let objInfo = `<dt class="house"><h3>${house.name}</h3></dt>`;
             house.members.forEach((member) => {
                 objInfo += `<dd class="folks">${member}</dd>`;
             });
@@ -45,3 +45,8 @@ fetch('https://x-colors.herokuapp.com/api/random/hue?type=dark')
         mainBody.style.color = "white";
     })
     .catch((err) => console.log("There was an error:", err));
+
+let container = document.querySelector("#container");
+container.addEventListener('click', (e) => {
+    location.reload();
+});

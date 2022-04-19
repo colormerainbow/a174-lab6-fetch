@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
 }
-h1,
-h3 {
+h1 {
     text-align: center;
 }
+
 .refresh a {
     color: white;
     text-decoration: none;
@@ -12,6 +12,7 @@ h3 {
     background-color: black;
     padding: .5rem;
 }
+
 body {
     padding: 2rem;
 }
