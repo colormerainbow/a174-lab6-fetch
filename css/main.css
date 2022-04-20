@@ -1,18 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Delius&display=swap');
 * {
     box-sizing: border-box;
 }
-h1,
-h3 {
+h1 {
+    text-align: center;
+    font-family: 'Berkshire Swash', cursive;
+}
+h2, h3 {
+    font-family: 'Berkshire Swash', cursive;
+}
+h4 {
     text-align: center;
 }
 .refresh a {
-    text-align: center;
     color: black;
     text-decoration: none;
     border: 2px solid darkgrey;
     background-color: white;
     padding: .5rem;
 }
+
 body {
     padding: 2rem;
+    font-family: 'Delius', cursive;
 }
