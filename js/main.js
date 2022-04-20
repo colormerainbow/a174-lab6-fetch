@@ -1,9 +1,4 @@
-//This code does NOT create any global variables.
-//Promises can be chained together, with the previous promise
-// passing its results to the next one in the chain.
-// the format is: fetch().then().then().catch()
-//it's easier to read if we put each step in its own line,
-//that's why the periods start the then lines.
+// fetch the data from the local json file
 
 fetch("houses.json")
     .then((response) => response.json())
